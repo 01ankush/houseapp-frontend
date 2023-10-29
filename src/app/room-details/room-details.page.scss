@@ -1,0 +1,52 @@
+.header-container {
+    display: flex; /* Display the heading and button in a horizontal row */
+    justify-content: space-between; /* Push them apart to the edges of the container */
+    align-items: center; /* Vertically align the content in the center */
+  
+    h4 {
+      margin: 0; /* Remove any default margin from the heading */
+    }
+  
+    ion-button {
+      margin-left: 10px; /* Add some spacing between the heading and the button */
+    }
+  }
+  .login-card {
+    background-size: cover;
+    border-radius: 15px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .login-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    height: 100vh;
+  }
+
+  .room-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .details {
+    margin-bottom: 16px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  

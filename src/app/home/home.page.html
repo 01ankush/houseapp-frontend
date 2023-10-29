@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Buy Rooms
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="full" (click)="navigateToAddProperty()">Add a Property</ion-button>
+
+  <ion-searchbar
+    name="searchQuery"
+    [(ngModel)]="searchQuery"
+   
+    (ionInput)="onSearchInput($event)"
+    placeholder="Enter location"
+  ></ion-searchbar>
+
+  <div class="header-container">
+    <h4 class="heading">Browse</h4>
+    <ion-button (click)="goToMapView()">Map View</ion-button>
+  </div>
+  <ion-list *ngIf="allRooms">
+    <ion-item *ngFor="let room of allRooms" (click)="navigateToRoomDetails(room._id)" class="clickable-item">
+      <ion-thumbnail slot="start">
+        <img [src]="room.frontImage">
+      </ion-thumbnail>
+      <ion-label>
+        <h3 class="heading">
+          <ng-container *ngIf="room.location">{{ room.location | titlecase }}</ng-container>
+        </h3>
+        <h3 class="heading">
+          <ng-container *ngIf="room.isResidential">Residential Use</ng-container>
+          <ng-container *ngIf="room.isCommercial">Commercial Use</ng-container>
+        </h3>
+        <p>₹{{ room.price }}</p>
+        <ion-badge color="light">
+          <ng-container *ngIf="room.isHouse">House</ng-container>
+          <ng-container *ngIf="room.isRoom">Rooms</ng-container>
+          <ng-container *ngIf="room.isPG">PG Rooms</ng-container>
+        </ion-badge>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+ 
+</ion-content>
+
+
+
+
+ <!-- <div  class="voice-assistant-button">
+    <ion-icon name="mic" (click)="startVoiceInput()" class="voice-assistant-icon"></ion-icon>
+  </div> -->
+ 

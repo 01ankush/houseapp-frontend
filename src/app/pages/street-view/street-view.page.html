@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Street View
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/room-details/${roomid}"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="street-view" class="street-view"></div>
+</ion-content>

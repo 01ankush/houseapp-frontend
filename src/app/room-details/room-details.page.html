@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ room?.isHouse ? 'House' : (room?.isRoom ? 'Room' : 'PG ') }} Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img [src]="room?.frontImage" alt="Room Image" class="room-image">
+  <div class="header-container">
+    <ion-card-title>{{ room?.location ? (room.location.charAt(0).toUpperCase() + room.location.slice(1)) : '' }}</ion-card-title>
+    <ion-card-subtitle [ngClass]="{'residential': room?.isResidential, 'commercial': room?.isCommercial}">
+      {{ room?.isResidential ? 'Residential Use' : 'Commercial Use' }}
+    </ion-card-subtitle>
+    <a href={{room?.video}} target="_blank">Watch Video</a>
+  </div>
+
+  <div class="details">
+    <p><strong>Price:</strong> ${{ room?.price }}</p>
+    <p><strong>Property Type:</strong> {{ room?.isHouse ? 'House' : (room?.isRoom ? 'Room' : 'PG Rooms') }}</p>
+    <p><strong>Number of Rooms for Rent:</strong> {{ room?.numRoomsForRent }}</p>
+    <p><strong>{{ room?.contactDetails?.isOwner ? 'Owner' : 'Broker' }} Phone Number:</strong> {{ room?.contactDetails?.phone }}</p>
+    <p><strong>Room Details:</strong></p>
+    <ul>
+      <li><strong>Bedrooms:</strong> {{ room?.roomDetails?.bedrooms }}</li>
+      <li><strong>Bathrooms:</strong> {{ room?.roomDetails?.bathrooms }}</li>
+      <li><strong>Balconies:</strong> {{ room?.roomDetails?.balconies }}</li>
+    </ul>
+  </div>
+
+  <ion-buttons class="buttons">
+    <ion-button color="primary" (click)="navigateToRoomLocation()">
+      <ion-icon name="map"></ion-icon> Find on Map
+    </ion-button>
+    <ion-button color="primary" (click)="navigateToStreetView(room._id)">
+      <ion-icon name="eye"></ion-icon> Street View
+    </ion-button>
+  </ion-buttons>
+
+  
+</ion-content>
+

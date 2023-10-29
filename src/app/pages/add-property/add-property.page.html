@@ -1,0 +1,107 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Add Property
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Show the form only if the property is not posted -->
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-input [(ngModel)]="property.location" name="location" type="text" placeholder="Location"></ion-input>
+    <ion-buttons slot="end">
+      <ion-button (click) ="detectLocation()">
+        Detect My Location
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  
+
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-input [(ngModel)]="property.frontImage" name="frontImage" type="url" placeholder="Front Image URL"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-input [(ngModel)]="property.video" name="video" type="url" placeholder="Video URL"></ion-input>
+  </ion-item>
+
+  <!-- Add radio buttons for property type -->
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-label>Property Type</ion-label>
+    <ion-radio-group [(ngModel)]="property.propertyType" name="propertyType">
+      <ion-item (click)="updatePropertyType('isHouse')">
+        <ion-label>House</ion-label>
+        <ion-radio slot="start" value="isHouse"></ion-radio>
+      </ion-item>
+      <ion-item (click)="updatePropertyType('isRoom')">
+        <ion-label>Room</ion-label>
+        <ion-radio slot="start" value="isRoom"></ion-radio>
+      </ion-item>
+      <ion-item (click)="updatePropertyType('isPG')">
+        <ion-label>PG</ion-label>
+        <ion-radio slot="start" value="isPG"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item>
+
+  <!-- Add radio buttons for property category -->
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-label>Property Category</ion-label>
+    <ion-radio-group [(ngModel)]="property.propertyCategory" name="propertyCategory">
+      <ion-item (click)="updatePropertyCategory('isResidential')">
+        <ion-label>Residential</ion-label>
+        <ion-radio slot="start" value="isResidential"></ion-radio>
+      </ion-item>
+      <ion-item (click)="updatePropertyCategory('isCommercial')">
+        <ion-label>Commercial</ion-label>
+        <ion-radio slot="start" value="isCommercial"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item>
+
+  <!-- Contact Details -->
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-label>Contact Details</ion-label>
+    <ion-radio-group [(ngModel)]="property.contactDetails" name="contactDetails">
+      <ion-item (click)="updateContactDetails('isOwner')">
+        <ion-label>Owner</ion-label>
+        <ion-radio slot="start" value="isOwner"></ion-radio>
+      </ion-item>
+      <ion-item (click)="updateContactDetails('isBroker')">
+        <ion-label>Broker</ion-label>
+        <ion-radio slot="start" value="isBroker"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item>
+  <ion-item *ngIf="!showSuccessMessage" >
+    <ion-label >Phone Number</ion-label>
+    <ion-input [(ngModel)]="property.phone" value="phone" ></ion-input>
+  </ion-item>
+
+  
+
+  <!-- Room Details -->
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-label>Room Details</ion-label>
+    <ion-input [(ngModel)]="property.roomDetails.bedrooms" name="bedrooms" type="number" placeholder="Bedrooms"></ion-input>
+    <ion-input [(ngModel)]="property.roomDetails.bathrooms" name="bathrooms" type="number" placeholder="Bathrooms"></ion-input>
+    <ion-input [(ngModel)]="property.roomDetails.balconies" name="balconies" type="number" placeholder="Balconies"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-input [(ngModel)]="property.numRoomsForRent" name="numRoomsForRent" type="number" placeholder="Number of Rooms for Rent"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="!showSuccessMessage">
+    <ion-input [(ngModel)]="property.price" name="price" type="number" placeholder="Price"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="postProperty()" *ngIf="!showSuccessMessage">Post Property</ion-button>
+
+  <!-- Show the success message when the property is posted successfully -->
+  <ion-item *ngIf="showSuccessMessage">
+    <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+    <ion-label>Property posted successfully!</ion-label>
+  </ion-item>
+</ion-content>

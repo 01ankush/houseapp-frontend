@@ -1,0 +1,8 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "houseapp-frontend",
+	"webDir": "www",
+	"server": {
+		"androidScheme": "https"
+	}
+}

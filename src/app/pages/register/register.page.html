@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input [(ngModel)]="firstName" placeholder="First Name" type="text" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="lastName" placeholder="Last Name" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="userName" placeholder="Username" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="email" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="password" type="password"></ion-input>
+  </ion-item>
+  <ion-button color="dark" expand="block" (click)="register()">
+    Register
+  </ion-button>
+  <p class="ion-text-center" *ngIf ="isLoading">
+    <ion-spinner></ion-spinner>
+  </p>
+  <p class="ion-text-center">Already have an account? <strong routerLink="/login">Login.</strong></p>
+
+
+</ion-content>

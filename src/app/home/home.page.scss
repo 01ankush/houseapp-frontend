@@ -1,0 +1,69 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+/* Customize the Voice Assistant Button */
+/* Customize the Voice Assistant Button */
+.voice-assistant-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px; /* Set your preferred button size */
+  height: 50px; /* Set your preferred button size */
+  border-radius: 50%; /* Makes it circular */
+  background-color: #007bff; /* Change button background color as needed */
+  color: #fff; /* Change button text color as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* Set the icon size */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+}
+
+/* Optionally adjust the icon size */
+.voice-assistant-button ion-icon {
+  font-size: 24px; /* Set the icon size */
+}
+.header-container {
+  display: flex; /* Display the heading and button in a horizontal row */
+  justify-content: space-between; /* Push them apart to the edges of the container */
+  align-items: center; /* Vertically align the content in the center */
+
+  h4 {
+    margin: 0; /* Remove any default margin from the heading */
+  }
+
+  ion-button {
+    margin-left: 10px; /* Add some spacing between the heading and the button */
+  }
+}
+ion-item.clickable-item {
+  cursor: pointer;
+}
+
+
+
