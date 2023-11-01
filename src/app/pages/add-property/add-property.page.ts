@@ -85,7 +85,7 @@ export class AddPropertyPage {
   fetchLocationDetails(lat: number, lng: number) {
     this.http
       .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyCIg58baI6932Ur5BAou6kk6ohg1uqSPtc`
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=YOUR_API_KEY`
       )
       .subscribe(
         (data: any) => {
