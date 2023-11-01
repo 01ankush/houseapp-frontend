@@ -82,7 +82,7 @@ export class RoomDetailsPage implements OnInit {
 
 
 getCoordinatesForLocation(location: string): Observable<any> {
-  const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=AIzaSyCIg58baI6932Ur5BAou6kk6ohg1uqSPtc`;
+  const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=YOUR_API_KEY`;
 
   return this.http.get(geocodingUrl);
 }
