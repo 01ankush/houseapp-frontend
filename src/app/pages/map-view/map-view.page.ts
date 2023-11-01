@@ -60,7 +60,7 @@ export class MapViewPage {
 
   async getCoordinatesForLocation(location: string): Promise<any> {
     // Send a geocoding request to Google Maps API and return coordinates
-    const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=AIzaSyCIg58baI6932Ur5BAou6kk6ohg1uqSPtc`;
+    const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=YOUR_API_KEY`;
 
     try {
       const response = await fetch(geocodingUrl);
